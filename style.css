@@ -28,30 +28,15 @@ body {
     color: var(--text-main);
     min-height: 100vh;
     overflow-x: hidden;
-    position: relative;
-}
-
-/* Balkan Zen Background Pattern */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background-image:
         radial-gradient(circle at 20% 20%, rgba(0, 210, 255, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 80% 80%, rgba(157, 80, 187, 0.05) 0%, transparent 40%),
-        url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10L20 20M90 90L80 80' stroke='rgba(0, 210, 255, 0.03)' stroke-width='1'/%3E%3C/svg%3E");
-    z-index: -1;
-    pointer-events: none;
+        radial-gradient(circle at 80% 80%, rgba(157, 80, 187, 0.05) 0%, transparent 40%);
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 2rem 6rem 2rem;
-    /* Extra bottom padding for Zen Bar */
+    padding: 2rem;
 }
 
 header {
@@ -100,6 +85,7 @@ header p {
 .tab-btn:hover {
     border-color: var(--primary-accent);
     color: var(--text-main);
+    transform: translateY(-2px);
 }
 
 .tab-btn.active {
@@ -107,6 +93,16 @@ header p {
     border: none;
     color: white;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Content Area */
+.content-section {
+    display: none;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.content-section.active {
+    display: block;
 }
 
 /* Cards & Tables */
@@ -117,22 +113,6 @@ header p {
     padding: 2.5rem;
     backdrop-filter: var(--glass-blur);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Corner Fildžan Accent */
-.grammar-card::after {
-    content: '';
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 30px;
-    height: 30px;
-    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 15C10 25 10 30 20 30C30 30 30 25 30 15H10Z' stroke='rgba(0, 210, 255, 0.3)' stroke-width='2'/%3E%3Cpath d='M15 12C15 10 18 8 20 8C22 8 25 10 25 12' stroke='rgba(0, 210, 255, 0.3)' stroke-width='1.5' stroke-dasharray='2 2'/%3E%3C/svg%3E");
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.5;
 }
 
 .table-wrapper {
@@ -148,15 +128,22 @@ table {
 
 th {
     color: var(--primary-accent);
+    font-weight: 600;
     padding: 1rem;
     border-bottom: 1px solid var(--border-color);
     text-transform: uppercase;
     font-size: 0.85rem;
+    letter-spacing: 0.05rem;
 }
 
 td {
     padding: 1.2rem 1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+}
+
+tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
 }
 
 .ending {
@@ -164,11 +151,27 @@ td {
     font-weight: 600;
 }
 
+/* Design Distinction: Area-based backgrounds */
 .singular-row td {
     background: var(--singular-bg) !important;
 }
 
 .plural-row td {
+    background: var(--plural-bg) !important;
+}
+
+.plural-row-start td {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Pronoun table column specifics */
+.col-singular {
+    color: var(--primary-accent);
+    background: var(--singular-bg) !important;
+}
+
+.col-plural {
+    color: var(--secondary-accent);
     background: var(--plural-bg) !important;
 }
 
@@ -185,6 +188,23 @@ td {
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 20px;
     padding: 2rem;
+}
+
+.exercise-group h3 {
+    margin-bottom: 2rem;
+    color: var(--primary-accent);
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.sentence {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    color: var(--text-main);
 }
 
 .hw-input {
@@ -204,31 +224,26 @@ td {
     background: rgba(255, 255, 255, 0.08);
 }
 
-/* Balkan Zen Bar */
-.zen-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(5, 7, 10, 0.85);
-    backdrop-filter: blur(15px);
-    border-top: 1px solid var(--border-color);
-    padding: 0.8rem 2rem;
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    font-size: 0.75rem;
-    letter-spacing: 0.15rem;
+.choices {
     color: var(--text-dim);
-    text-transform: uppercase;
-}
-
-.zen-item b {
-    color: var(--primary-accent);
-    font-weight: 600;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-right: 0.5rem;
 }
 
 /* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -246,9 +261,7 @@ td {
         font-size: 2.5rem;
     }
 
-    .zen-bar {
-        gap: 1rem;
-        font-size: 0.65rem;
-        padding: 0.8rem 1rem;
+    .grammar-card {
+        padding: 1.5rem;
     }
 }
