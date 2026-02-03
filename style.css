@@ -193,13 +193,15 @@ header p {
     padding: 0 1rem;
 }
 
+.content-section.active {
+    display: block;
+}
+
 .grammar-card {
     background: transparent;
     border: none;
     border-radius: 0;
     padding: 0;
-    backdrop-filter: none;
-    box-shadow: none;
 }
 
 h2 {
@@ -235,14 +237,14 @@ th {
 
 td {
     padding: 1.5rem 1rem;
-    background: rgba(255, 255, 255, 0.015);
-    border-bottom: 1px solid transparent;
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
     transition: var(--transition);
 }
 
 tr:hover td {
-    background: rgba(255, 255, 255, 0.03);
     color: white;
+    border-bottom-color: var(--primary-accent);
 }
 
 .ending {
@@ -250,12 +252,9 @@ tr:hover td {
     font-weight: 600;
 }
 
-.singular-row td {
-    background: var(--singular-bg) !important;
-}
-
+.singular-row td,
 .plural-row td {
-    background: var(--plural-bg) !important;
+    background: transparent !important;
 }
 
 /* Homework Interactive Styles */
@@ -267,18 +266,24 @@ tr:hover td {
 }
 
 .exercise-group {
-    background: rgba(255, 255, 255, 0.015);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    padding: 2rem;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.exercise-group:last-child {
+    border-bottom: none;
 }
 
 .hw-input {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0;
     color: white;
-    padding: 4px 12px;
+    padding: 2px 8px;
     font-size: 1.05rem;
     width: 140px;
     outline: none;
@@ -286,8 +291,8 @@ tr:hover td {
 }
 
 .hw-input:focus {
-    border-color: var(--primary-accent);
-    background: rgba(255, 255, 255, 0.08);
+    border-bottom-color: var(--primary-accent);
+    box-shadow: 0 4px 10px -4px rgba(0, 210, 255, 0.2);
 }
 
 /* Animations */
