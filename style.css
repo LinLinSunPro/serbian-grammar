@@ -8,6 +8,12 @@
     --text-dim: #94a3b8;
     --glass-blur: blur(12px);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Dedicated Area Colors */
+    --singular-bg: rgba(0, 210, 255, 0.08);
+    /* Sophisticated Dark Cyan */
+    --plural-bg: rgba(157, 80, 187, 0.12);
+    /* Elegant Deep Purple */
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
@@ -46,6 +52,7 @@ header h1 {
     font-weight: 700;
     background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 0.5rem;
 }
@@ -146,6 +153,30 @@ tr:hover td {
     font-weight: 600;
 }
 
+/* Design Distinction: Area-based backgrounds */
+.singular-row td {
+    background: var(--singular-bg) !important;
+}
+
+.plural-row td {
+    background: var(--plural-bg) !important;
+}
+
+.plural-row-start td {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Pronoun table column specifics */
+.col-singular {
+    color: var(--primary-accent);
+    background: var(--singular-bg) !important;
+}
+
+.col-plural {
+    color: var(--secondary-accent);
+    background: var(--plural-bg) !important;
+}
+
 /* Practice Mode */
 .practice-hub {
     margin-top: 4rem;
@@ -185,48 +216,6 @@ tr:hover td {
 .option-btn:hover {
     background: var(--primary-accent);
     border-color: var(--primary-accent);
-}
-
-/* Singular/Plural Separation */
-.singular-row td {
-    background: rgba(0, 210, 255, 0.03);
-}
-
-.plural-row td {
-    background: rgba(157, 80, 187, 0.03);
-}
-
-.plural-row-start {
-    border-top: 2px solid var(--border-color);
-}
-
-.col-singular {
-    color: var(--primary-accent);
-    font-weight: 500;
-}
-
-.col-plural {
-    color: var(--secondary-accent);
-    font-weight: 500;
-}
-
-.section-label {
-    font-size: 0.7rem;
-    padding: 2px 8px;
-    border-radius: 4px;
-    text-transform: uppercase;
-    margin-left: 8px;
-    vertical-align: middle;
-}
-
-.label-singular {
-    background: rgba(0, 210, 255, 0.1);
-    color: var(--primary-accent);
-}
-
-.label-plural {
-    background: rgba(157, 80, 187, 0.1);
-    color: var(--secondary-accent);
 }
 
 /* Animations */
