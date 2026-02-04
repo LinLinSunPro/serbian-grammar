@@ -139,8 +139,7 @@ header.meta-header {
     transform: translateY(0);
 }
 
-.icon,
-.vibe-status {
+.icon {
     cursor: pointer;
     transition: all 0.3s ease;
 }

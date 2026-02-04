@@ -133,7 +133,7 @@ function triggerVibeChange() {
         setTimeout(() => {
             isVibeTransitioning = false;
         }, 1100);
-    }, 1500); // 1.5s delay for that luxury Zen feel
+    }, 1100); // Wait for the 1s fade-out to finish
 }
 
 // Setup persistence listeners
