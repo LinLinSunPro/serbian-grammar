@@ -154,10 +154,10 @@ function setupPersistence() {
 const zenInfo = {
     'fildzan': "<b>Fildžan (feel-jahn)</b><br>A small, handleless ceramic cup for \"domaća kafa\" (Serbian/Turkish coffee).",
     'cokanjcic': "<b>Čokanjčić (cho-kahn-cheech)</b><br>A small, pear-shaped glass with a narrow neck for serving Rakija - traditional fruit brandy.",
-    'POLAKO': "Attitude: Slowly / Take it easy. <br>A fundamental Balkan law that says everything can wait. If you are slow enough—most problems will eventually solve themselves.",
-    'NEMA': "Draft: None / No draft. <br>The legendary Balkan supernatural force believed to cause everything from back pain to sudden death. \"Promaja: NEMA\" means here you are safe and cozy.",
-    'ČEKA SE': "Waiting for coffee / Coffee is brewing. <br>A \"loading state\" of the Balkan soul. A daily ritual where all tasks are paused until the coffee is served. The socially acceptable reason to procrastinate.",
-    'SAMO MALO': "Rakia: just a little. <br>The fine line between the 'samo jednu' (just one) and overwhelming Balkan hospitality."
+    'POLAKO': "A fundamental Balkan law that says everything can wait. If you are slow enough—most problems will eventually solve themselves.",
+    'NEMA': "The legendary Balkan supernatural force believed to cause everything from back pain to sudden death. \"Promaja: NEMA\" means you are safe and cozy.",
+    'ČEKA SE': "A \"loading state\" of the Balkan soul. A daily ritual where all tasks are paused until the coffee is served. The socially acceptable reason to procrastinate.",
+    'SAMO MALO': "The fine line between the 'samo jednu' (just one) and overwhelming Balkan hospitality."
 };
 
 function setupZenInteractivity() {
@@ -175,9 +175,19 @@ function setupZenInteractivity() {
             return;
         }
 
-        infoBox.innerHTML = zenInfo[key] || "";
-        infoBox.classList.add('active');
-        infoBox.dataset.current = key;
+        // Smooth swap: Fade out first if already active but with different key
+        if (infoBox.classList.contains('active')) {
+            infoBox.classList.remove('active');
+            setTimeout(() => {
+                infoBox.innerHTML = zenInfo[key] || "";
+                infoBox.classList.add('active');
+                infoBox.dataset.current = key;
+            }, 410); // Wait for fade out
+        } else {
+            infoBox.innerHTML = zenInfo[key] || "";
+            infoBox.classList.add('active');
+            infoBox.dataset.current = key;
+        }
     };
 
     if (fildzan) fildzan.addEventListener('click', () => showInfo('fildzan'));
