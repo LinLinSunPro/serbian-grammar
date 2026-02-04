@@ -186,14 +186,38 @@ header.meta-header {
     color: white;
 }
 
-/* Category Specific Background Colors (Diffuse Glows) */
-.tab-item:nth-child(1).active {
-    background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, transparent 70%);
+/* Ethereal Glow behind text - fading in all directions */
+.tab-item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 180%;
+    /* Taller than the text to allow vertical fade */
+    background: radial-gradient(circle, var(--glow-color) 0%, transparent 65%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
 }
 
-.tab-item:nth-child(2).active {
-    background: radial-gradient(circle, rgba(157, 80, 187, 0.15) 0%, transparent 70%);
+.tab-item.active::before {
+    opacity: 1;
 }
+
+/* Category Specific Glow Colors */
+.tab-item:nth-child(1) {
+    --glow-color: rgba(0, 210, 255, 0.2);
+}
+
+/* Cyan */
+.tab-item:nth-child(2) {
+    --glow-color: rgba(157, 80, 187, 0.2);
+}
+
+/* Purple */
 
 /* Display Logic */
 .category-section {
