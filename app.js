@@ -152,12 +152,12 @@ function setupPersistence() {
 
 // BALKAN ZEN REVEAL DATA
 const zenInfo = {
-    'fildzan': "A small, handleless ceramic cup for \"domaća kafa\" (Serbian/Turkish coffee).",
-    'cokanjcic': "A small, pear-shaped glass with a narrow neck for serving Rakija - traditional fruit brandy.",
-    'POLAKO': "Attitude: Slowly / Take it easy. \nA fundamental Balkan law that says everything can wait. If you are slow enough—most problems will eventually solve themselves.",
-    'NEMA': "Draft: None / No draft. \nThe legendary Balkan supernatural force believed to cause everything from back pain to sudden death. \"Promaja: NEMA\" means here you are safe and cozy.",
-    'ČEKA SE': "Waiting for coffee / Coffee is brewing. \nA \"loading state\" of the Balkan soul. A daily ritual where all tasks are paused until the coffee is served. The socially acceptable reason to procrastinate.",
-    'SAMO MALO': "Rakia: just a little. \nThe fine line between the 'samo jednu' (just one) and overwhelming Balkan hospitality."
+    'fildzan': "<b>Fildžan (feel-jahn)</b><br>A small, handleless ceramic cup for \"domaća kafa\" (Serbian/Turkish coffee).",
+    'cokanjcic': "<b>Čokanjčić (cho-kahn-cheech)</b><br>A small, pear-shaped glass with a narrow neck for serving Rakija - traditional fruit brandy.",
+    'POLAKO': "<b>Stav: Polako</b><br>Attitude: Slowly / Take it easy. <br>A fundamental Balkan law that says everything can wait. If you are slow enough—most problems will eventually solve themselves.",
+    'NEMA': "<b>Promaja: Nema</b><br>Draft: None / No draft. <br>The legendary Balkan supernatural force believed to cause everything from back pain to sudden death. \"Promaja: NEMA\" means here you are safe and cozy.",
+    'ČEKA SE': "<b>Kafa: Čeka Se</b><br>Waiting for coffee / Coffee is brewing. <br>A \"loading state\" of the Balkan soul. A daily ritual where all tasks are paused until the coffee is served. The socially acceptable reason to procrastinate.",
+    'SAMO MALO': "<b>Rakija: Samo Malo</b><br>Rakia: just a little. <br>The fine line between the 'samo jednu' (just one) and overwhelming Balkan hospitality."
 };
 
 function setupZenInteractivity() {

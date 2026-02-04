@@ -2,11 +2,11 @@
 
 ## Shapes
 
-### Fildžan
+### Fildžan (feel-jahn)
 
 A small, handleless ceramic cup for "domaća kafa" (Serbian/Turkish coffee).
 
-### Čokanjčić
+### Čokanjčić (cho-kahn-cheech)
 
 A small, pear-shaped glass with a narrow neck for serving Rakija - traditional fruit brandy.
 
