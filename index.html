@@ -7,6 +7,7 @@
     <title>Serbian Grammar Hub | Balkan Zen Edition</title>
     <meta name="description" content="A premium interactive Serbian grammar resource with a Balkan Zen aesthetic.">
     <link rel="stylesheet" href="style.css?v=3.5">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
 <body>
@@ -254,45 +255,54 @@
                     <div class="grammar-card">
                         <div class="homework-container">
                             <div class="exercise-group">
-                                <h3>1 – Popuni rečenice odgovarajućom zamenicom (moj, moja, moje)</h3>
-                                <div class="sentence">Ovo je <input type="text" class="hw-input"
+                                <h3>1 – Popuni rečenice odgovarajućom zamenicom (moj, moja, BOOLEANme)</h3>
+                                <div class="sentence">Ovo je <input type="text" id="hw-1-1" class="hw-input"
                                         oninput="triggerVibeChange()"> brat.</div>
-                                <div class="sentence">Gde je <input type="text" class="hw-input"
+                                <div class="sentence">Gde je <input type="text" id="hw-1-2" class="hw-input"
                                         oninput="triggerVibeChange()"> knjiga?</div>
-                                <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                <div class="sentence"><input type="text" id="hw-1-3" class="hw-input"
+                                        oninput="triggerVibeChange()">
                                     dete ide u školu.</div>
-                                <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                <div class="sentence"><input type="text" id="hw-1-4" class="hw-input"
+                                        oninput="triggerVibeChange()">
                                     pas
                                     je mali.</div>
-                                <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                <div class="sentence"><input type="text" id="hw-1-5" class="hw-input"
+                                        oninput="triggerVibeChange()">
                                     učiteljica je dobra.</div>
                             </div>
                             <div class="exercise-group">
                                 <h3>2 – Izaberi tačan oblik</h3>
-                                <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                <div class="sentence"><input type="text" id="hw-2-1" class="hw-input"
+                                        oninput="triggerVibeChange()">
                                     telefon</div>
-                                <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                <div class="sentence"><input type="text" id="hw-2-2" class="hw-input"
+                                        oninput="triggerVibeChange()">
                                     kuća</div>
-                                <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                <div class="sentence"><input type="text" id="hw-2-3" class="hw-input"
+                                        oninput="triggerVibeChange()">
                                     selo</div>
-                                <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                <div class="sentence"><input type="text" id="hw-2-4" class="hw-input"
+                                        oninput="triggerVibeChange()">
                                     sestra</div>
-                                <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                <div class="sentence"><input type="text" id="hw-2-5" class="hw-input"
+                                        oninput="triggerVibeChange()">
                                     auto</div>
                             </div>
 
                             <!-- Exercise 3 -->
                             <div class="exercise-group">
                                 <h3>3 – Dopuni rečenice odgovarajućim oblikom (tvoj / tvoja / tvoje)</h3>
-                                <div class="sentence">Gde je <input type="text" class="hw-input"
+                                <div class="sentence">Gde je <input type="text" id="hw-3-1" class="hw-input"
                                         oninput="triggerVibeChange()"> sveska?</div>
-                                <div class="sentence">Ovo je <input type="text" class="hw-input"
+                                <div class="sentence">Ovo je <input type="text" id="hw-3-2" class="hw-input"
                                         oninput="triggerVibeChange()"> drug iz odeljenja.</div>
-                                <div class="sentence">Da li je ovo <input type="text" class="hw-input"
+                                <div class="sentence">Da li je ovo <input type="text" id="hw-3-3" class="hw-input"
                                         oninput="triggerVibeChange()"> ranac?</div>
-                                <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                <div class="sentence"><input type="text" id="hw-3-4" class="hw-input"
+                                        oninput="triggerVibeChange()">
                                     kuća je veoma lepa.</div>
-                                <div class="sentence">Sviđa mi se <input type="text" class="hw-input"
+                                <div class="sentence">Sviđa mi se <input type="text" id="hw-3-5" class="hw-input"
                                         oninput="triggerVibeChange()"> crtež.</div>
                             </div>
 
@@ -300,14 +310,18 @@
                             <div class="exercise-group">
                                 <h3>4 – Zaokruži tačan oblik</h3>
                                 <div class="sentence"><span class="choices">(tvoj / tvoja / tvoje)</span> <input
-                                        type="text" class="hw-input" oninput="triggerVibeChange()"> olovka je na stolu.
+                                        type="text" id="hw-4-1" class="hw-input" oninput="triggerVibeChange()"> olovka
+                                    je na stolu.
                                 </div>
                                 <div class="sentence">Ovo je <span class="choices">(tvoj / tvoja / tvoje)</span> <input
-                                        type="text" class="hw-input" oninput="triggerVibeChange()"> bicikl.</div>
+                                        type="text" id="hw-4-2" class="hw-input" oninput="triggerVibeChange()"> bicikl.
+                                </div>
                                 <div class="sentence">Gde su <span class="choices">(tvoj / tvoja / tvoje)</span> <input
-                                        type="text" class="hw-input" oninput="triggerVibeChange()"> patike?</div>
+                                        type="text" id="hw-4-3" class="hw-input" oninput="triggerVibeChange()"> patike?
+                                </div>
                                 <div class="sentence"><span class="choices">(tvoj / tvoja / tvoje)</span> <input
-                                        type="text" class="hw-input" oninput="triggerVibeChange()"> sestra ide u peti
+                                        type="text" id="hw-4-4" class="hw-input" oninput="triggerVibeChange()"> sestra
+                                    ide u peti
                                     razred.</div>
                             </div>
 
@@ -315,27 +329,27 @@
                             <div class="exercise-group">
                                 <h3>5 – Prepiši rečenice i zameni podvučene reči pravilnim oblikom</h3>
                                 <div class="sentence"><span class="choices">Ovo je ranac koji pripada tebi.</span></div>
-                                <div class="sentence"><input type="text" class="hw-input" style="width: 100%;"
-                                        oninput="triggerVibeChange()"></div>
+                                <div class="sentence"><input type="text" id="hw-5-1" class="hw-input"
+                                        style="width: 100%;" oninput="triggerVibeChange()"></div>
                                 <div class="sentence" style="margin-top: 1rem;"><span class="choices">Video sam knjigu
                                         koja
                                         pripada tebi.</span></div>
-                                <div class="sentence"><input type="text" class="hw-input" style="width: 100%;"
-                                        oninput="triggerVibeChange()"></div>
+                                <div class="sentence"><input type="text" id="hw-5-2" class="hw-input"
+                                        style="width: 100%;" oninput="triggerVibeChange()"></div>
                                 <div class="sentence" style="margin-top: 1rem;"><span class="choices">Gde je kuća koja
                                         pripada tebi?</span></div>
-                                <div class="sentence"><input type="text" class="hw-input" style="width: 100%;"
-                                        oninput="triggerVibeChange()"></div>
+                                <div class="sentence"><input type="text" id="hw-5-3" class="hw-input"
+                                        style="width: 100%;" oninput="triggerVibeChange()"></div>
                             </div>
 
                             <!-- Exercise 6 -->
                             <div class="exercise-group">
                                 <h3>6 – Sastavi rečenicu sa svakim oblikom</h3>
-                                <div class="sentence">tvoj &rarr; <input type="text" class="hw-input"
+                                <div class="sentence">tvoj &rarr; <input type="text" id="hw-6-1" class="hw-input"
                                         style="width: 100%;" oninput="triggerVibeChange()"></div>
-                                <div class="sentence">tvoja &rarr; <input type="text" class="hw-input"
+                                <div class="sentence">tvoja &rarr; <input type="text" id="hw-6-2" class="hw-input"
                                         style="width: 100%;" oninput="triggerVibeChange()"></div>
-                                <div class="sentence">tvoje &rarr; <input type="text" class="hw-input"
+                                <div class="sentence">tvoje &rarr; <input type="text" id="hw-6-3" class="hw-input"
                                         style="width: 100%;" oninput="triggerVibeChange()"></div>
                             </div>
                         </div>

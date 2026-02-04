@@ -1,3 +1,46 @@
+// SUPABASE CONFIGURATION
+const SUPABASE_URL = 'https://yheuccgkzaphqqmmxlrg.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InloZXVjY2dremFwaHFxbW14bHJnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAxOTQ1ODgsImV4cCI6MjA4NTc3MDU4OH0.9o1L6f9XeJwrd4_cgnGZMfoQYuFePIEQL4-GjtctWs0';
+const supabase = typeof supabase !== 'undefined' ? supabase : (window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null);
+
+async function saveHomework(fieldId, value) {
+    if (!supabase) return;
+
+    const { error } = await supabase
+        .from('homework_submissions')
+        .upsert({
+            submission_id: 'serbian_zen_v1',
+            field_id: fieldId,
+            content: value,
+            updated_at: new Date()
+        }, { onConflict: 'submission_id, field_id' });
+
+    if (error) console.error('Error saving line:', error);
+}
+
+async function loadHomework() {
+    if (!supabase) return;
+
+    const { data, error } = await supabase
+        .from('homework_submissions')
+        .select('field_id, content')
+        .eq('submission_id', 'serbian_zen_v1');
+
+    if (error) {
+        console.error('Error loading homework:', error);
+        return;
+    }
+
+    if (data) {
+        data.forEach(item => {
+            const input = document.getElementById(item.field_id);
+            if (input) {
+                input.value = item.content;
+            }
+        });
+    }
+}
+
 function switchCategory(catId) {
     // Hide all category sections
     document.querySelectorAll('.category-section').forEach(cat => {
@@ -16,7 +59,9 @@ function switchCategory(catId) {
     }
 
     // Add active class to clicked tab
-    event.currentTarget.classList.add('active');
+    if (event && event.currentTarget) {
+        event.currentTarget.classList.add('active');
+    }
 
     // Trigger Vibe Change
     triggerVibeChange();
@@ -87,8 +132,25 @@ function triggerVibeChange() {
     }, 1500); // 1.5s delay for that luxury Zen feel
 }
 
+// Setup persistence listeners
+function setupPersistence() {
+    const homeworkInputs = document.querySelectorAll('.hw-input');
+    homeworkInputs.forEach(input => {
+        input.addEventListener('blur', (e) => {
+            const id = e.target.id;
+            const val = e.target.value;
+            if (id) {
+                saveHomework(id, val);
+            }
+        });
+    });
+}
+
 // Initial state
 document.addEventListener('DOMContentLoaded', () => {
     const vibeText = document.getElementById('vibe-text');
     if (vibeText) vibeText.style.opacity = '1';
+
+    setupPersistence();
+    loadHomework();
 });
