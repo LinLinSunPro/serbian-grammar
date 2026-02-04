@@ -42,294 +42,301 @@
         </header>
 
         <nav class="tabs-container">
-            <button class="tab-btn active" onclick="switchTab('biti')">Verb: Biti (To Be)</button>
-            <button class="tab-btn" onclick="switchTab('verbs')">Verb Conjugation (-I/-E)</button>
-            <button class="tab-btn" onclick="switchTab('pronouns')">Possessive Pronouns</button>
-            <button class="tab-btn" onclick="switchTab('homework')">Homework (Exercises)</button>
+            <div class="tab-item active" onclick="switchCategory('grammar')">Gramatika</div>
+            <div class="tab-item" onclick="switchCategory('homework')">Domaći zadatak</div>
         </nav>
 
         <main>
-            <!-- SECTION: BITI -->
-            <section id="biti" class="content-section active">
-                <div class="grammar-card">
-                    <h2>Glagol "BITI" (Present Tense)</h2>
-                    <div class="table-wrapper">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Person</th>
-                                    <th>Positive Form</th>
-                                    <th>Negative Form</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="singular-row">
-                                    <td><b>JA</b></td>
-                                    <td>sam</td>
-                                    <td class="ending">nisam</td>
-                                </tr>
-                                <tr class="singular-row">
-                                    <td><b>TI</b></td>
-                                    <td>si</td>
-                                    <td class="ending">nisi</td>
-                                </tr>
-                                <tr class="singular-row">
-                                    <td><b>ON/ONA/ONO</b></td>
-                                    <td>je</td>
-                                    <td class="ending">nije</td>
-                                </tr>
-                                <tr class="plural-row plural-row-start">
-                                    <td><b>MI</b></td>
-                                    <td>smo</td>
-                                    <td class="ending">nismo</td>
-                                </tr>
-                                <tr class="plural-row">
-                                    <td><b>VI</b></td>
-                                    <td>ste</td>
-                                    <td class="ending">niste</td>
-                                </tr>
-                                <tr class="plural-row">
-                                    <td><b>ONI/ONE/ONA</b></td>
-                                    <td>su</td>
-                                    <td class="ending">nisu</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Other sections remain same, will provide full content in write_to_file -->
-            <section id="verbs" class="content-section">
-                <div class="grammar-card">
-                    <h2>Prezent Glagola (-I / -E)</h2>
-                    <div class="table-wrapper">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Person</th>
-                                    <th>Ending</th>
-                                    <th>Example: Raditi</th>
-                                    <th>Example: Voleti</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="singular-row">
-                                    <td><b>JA</b></td>
-                                    <td>-m</td>
-                                    <td>radim</td>
-                                    <td>volim</td>
-                                </tr>
-                                <tr class="singular-row">
-                                    <td><b>TI</b></td>
-                                    <td>-š</td>
-                                    <td>radiš</td>
-                                    <td>voliš</td>
-                                </tr>
-                                <tr class="singular-row">
-                                    <td><b>ON/ONA/ONO</b></td>
-                                    <td>---</td>
-                                    <td>radi</td>
-                                    <td>voli</td>
-                                </tr>
-                                <tr class="plural-row plural-row-start">
-                                    <td><b>MI</b></td>
-                                    <td>-mo</td>
-                                    <td>radimo</td>
-                                    <td>volimo</td>
-                                </tr>
-                                <tr class="plural-row">
-                                    <td><b>VI</b></td>
-                                    <td>-te</td>
-                                    <td>radite</td>
-                                    <td>volite</td>
-                                </tr>
-                                <tr class="plural-row">
-                                    <td><b>ONI/ONE/ONA</b></td>
-                                    <td class="ending">-e</td>
-                                    <td>rade</td>
-                                    <td>vole</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            <section id="pronouns" class="content-section">
-                <div class="grammar-card">
-                    <h2>Prisvojne Zamenice</h2>
-                    <div class="table-wrapper">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Person</th>
-                                    <th class="col-singular">Masc. Sg</th>
-                                    <th class="col-singular">Fem. Sg</th>
-                                    <th class="col-singular">Neut. Sg</th>
-                                    <th class="col-plural">Masc. Pl</th>
-                                    <th class="col-plural">Fem. Pl</th>
-                                    <th class="col-plural">Neut. Pl</th>
-                                </tr>
-                            </thead>
-                            <tbody id="pronoun-table">
-                                <tr>
-                                    <td><b>JA</b></td>
-                                    <td class="col-singular">moj</td>
-                                    <td class="col-singular">moja</td>
-                                    <td class="col-singular">moje</td>
-                                    <td class="col-plural">moji</td>
-                                    <td class="col-plural">moje</td>
-                                    <td class="col-plural">moja</td>
-                                </tr>
-                                <tr>
-                                    <td><b>TI</b></td>
-                                    <td class="col-singular">tvoj</td>
-                                    <td class="col-singular">tvoja</td>
-                                    <td class="col-singular">tvoje</td>
-                                    <td class="col-plural">tvoji</td>
-                                    <td class="col-plural">tvoje</td>
-                                    <td class="col-plural">tvoja</td>
-                                </tr>
-                                <tr>
-                                    <td><b>ON</b></td>
-                                    <td class="col-singular">njegov</td>
-                                    <td class="col-singular">njegova</td>
-                                    <td class="col-singular">njegovo</td>
-                                    <td class="col-plural">njegovi</td>
-                                    <td class="col-plural">njegove</td>
-                                    <td class="col-plural">njegova</td>
-                                </tr>
-                                <tr>
-                                    <td><b>ONA</b></td>
-                                    <td class="col-singular">njen</td>
-                                    <td class="col-singular">njena</td>
-                                    <td class="col-singular">njeno</td>
-                                    <td class="col-plural">njeni</td>
-                                    <td class="col-plural">njene</td>
-                                    <td class="col-plural">njena</td>
-                                </tr>
-                                <tr>
-                                    <td><b>MI</b></td>
-                                    <td class="col-singular">naš</td>
-                                    <td class="col-singular">naša</td>
-                                    <td class="col-singular">naše</td>
-                                    <td class="col-plural">naši</td>
-                                    <td class="col-plural">naše</td>
-                                    <td class="col-plural">naša</td>
-                                </tr>
-                                <tr>
-                                    <td><b>VI</b></td>
-                                    <td class="col-singular">vaš</td>
-                                    <td class="col-singular">vaša</td>
-                                    <td class="col-singular">vaše</td>
-                                    <td class="col-plural">vaši</td>
-                                    <td class="col-plural">vaše</td>
-                                    <td class="col-plural">vaša</td>
-                                </tr>
-                                <tr>
-                                    <td><b>ONI</b></td>
-                                    <td class="col-singular">njihov</td>
-                                    <td class="col-singular">njihova</td>
-                                    <td class="col-singular">njihovo</td>
-                                    <td class="col-plural">njihovi</td>
-                                    <td class="col-plural">njihove</td>
-                                    <td class="col-plural">njihova</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            <section id="homework" class="content-section">
-                <div class="grammar-card">
-                    <h2>Domaći Zadatak (Exercise)</h2>
-                    <div class="homework-container">
-                        <div class="exercise-group">
-                            <h3>1 – Popuni rečenice odgovarajućom zamenicom (moj, moja, moje)</h3>
-                            <div class="sentence">Ovo je <input type="text" class="hw-input"
-                                    oninput="triggerVibeChange()"> brat.</div>
-                            <div class="sentence">Gde je <input type="text" class="hw-input"
-                                    oninput="triggerVibeChange()"> knjiga?</div>
-                            <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
-                                dete ide u školu.</div>
-                            <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()"> pas
-                                je mali.</div>
-                            <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
-                                učiteljica je dobra.</div>
-                        </div>
-                        <div class="exercise-group">
-                            <h3>2 – Izaberi tačan oblik</h3>
-                            <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
-                                telefon</div>
-                            <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
-                                kuća</div>
-                            <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
-                                selo</div>
-                            <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
-                                sestra</div>
-                            <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
-                                auto</div>
-                        </div>
-
-                        <!-- Exercise 3 -->
-                        <div class="exercise-group">
-                            <h3>3 – Dopuni rečenice odgovarajućim oblikom (tvoj / tvoja / tvoje)</h3>
-                            <div class="sentence">Gde je <input type="text" class="hw-input"
-                                    oninput="triggerVibeChange()"> sveska?</div>
-                            <div class="sentence">Ovo je <input type="text" class="hw-input"
-                                    oninput="triggerVibeChange()"> drug iz odeljenja.</div>
-                            <div class="sentence">Da li je ovo <input type="text" class="hw-input"
-                                    oninput="triggerVibeChange()"> ranac?</div>
-                            <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
-                                kuća je veoma lepa.</div>
-                            <div class="sentence">Sviđa mi se <input type="text" class="hw-input"
-                                    oninput="triggerVibeChange()"> crtež.</div>
-                        </div>
-
-                        <!-- Exercise 4 -->
-                        <div class="exercise-group">
-                            <h3>4 – Zaokruži tačan oblik</h3>
-                            <div class="sentence"><span class="choices">(tvoj / tvoja / tvoje)</span> <input type="text"
-                                    class="hw-input" oninput="triggerVibeChange()"> olovka je na stolu.</div>
-                            <div class="sentence">Ovo je <span class="choices">(tvoj / tvoja / tvoje)</span> <input
-                                    type="text" class="hw-input" oninput="triggerVibeChange()"> bicikl.</div>
-                            <div class="sentence">Gde su <span class="choices">(tvoj / tvoja / tvoje)</span> <input
-                                    type="text" class="hw-input" oninput="triggerVibeChange()"> patike?</div>
-                            <div class="sentence"><span class="choices">(tvoj / tvoja / tvoje)</span> <input type="text"
-                                    class="hw-input" oninput="triggerVibeChange()"> sestra ide u peti razred.</div>
-                        </div>
-
-                        <!-- Exercise 5 -->
-                        <div class="exercise-group">
-                            <h3>5 – Prepiši rečenice i zameni podvučene reči pravilnim oblikom</h3>
-                            <div class="sentence"><span class="choices">Ovo je ranac koji pripada tebi.</span></div>
-                            <div class="sentence"><input type="text" class="hw-input" style="width: 100%;"
-                                    oninput="triggerVibeChange()"></div>
-                            <div class="sentence" style="margin-top: 1rem;"><span class="choices">Video sam knjigu koja
-                                    pripada tebi.</span></div>
-                            <div class="sentence"><input type="text" class="hw-input" style="width: 100%;"
-                                    oninput="triggerVibeChange()"></div>
-                            <div class="sentence" style="margin-top: 1rem;"><span class="choices">Gde je kuća koja
-                                    pripada tebi?</span></div>
-                            <div class="sentence"><input type="text" class="hw-input" style="width: 100%;"
-                                    oninput="triggerVibeChange()"></div>
-                        </div>
-
-                        <!-- Exercise 6 -->
-                        <div class="exercise-group">
-                            <h3>6 – Sastavi rečenicu sa svakim oblikom</h3>
-                            <div class="sentence">tvoj &rarr; <input type="text" class="hw-input" style="width: 100%;"
-                                    oninput="triggerVibeChange()"></div>
-                            <div class="sentence">tvoja &rarr; <input type="text" class="hw-input" style="width: 100%;"
-                                    oninput="triggerVibeChange()"></div>
-                            <div class="sentence">tvoje &rarr; <input type="text" class="hw-input" style="width: 100%;"
-                                    oninput="triggerVibeChange()"></div>
+            <!-- CATEGORY: GRAMMAR -->
+            <div id="grammar-cat" class="category-section active">
+                <section id="biti" class="content-section active">
+                    <div class="grammar-card">
+                        <h2>Glagol "BITI" (Present Tense)</h2>
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Person</th>
+                                        <th>Positive Form</th>
+                                        <th>Negative Form</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="singular-row">
+                                        <td><b>JA</b></td>
+                                        <td>sam</td>
+                                        <td class="ending">nisam</td>
+                                    </tr>
+                                    <tr class="singular-row">
+                                        <td><b>TI</b></td>
+                                        <td>si</td>
+                                        <td class="ending">nisi</td>
+                                    </tr>
+                                    <tr class="singular-row">
+                                        <td><b>ON/ONA/ONO</b></td>
+                                        <td>je</td>
+                                        <td class="ending">nije</td>
+                                    </tr>
+                                    <tr class="plural-row plural-row-start">
+                                        <td><b>MI</b></td>
+                                        <td>smo</td>
+                                        <td class="ending">nismo</td>
+                                    </tr>
+                                    <tr class="plural-row">
+                                        <td><b>VI</b></td>
+                                        <td>ste</td>
+                                        <td class="ending">niste</td>
+                                    </tr>
+                                    <tr class="plural-row">
+                                        <td><b>ONI/ONE/ONA</b></td>
+                                        <td>su</td>
+                                        <td class="ending">nisu</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+
+                <!-- Other sections remain same, will provide full content in write_to_file -->
+                <section id="verbs" class="content-section">
+                    <div class="grammar-card">
+                        <h2>Prezent Glagola (-I / -E)</h2>
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Person</th>
+                                        <th>Ending</th>
+                                        <th>Example: Raditi</th>
+                                        <th>Example: Voleti</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="singular-row">
+                                        <td><b>JA</b></td>
+                                        <td>-m</td>
+                                        <td>radim</td>
+                                        <td>volim</td>
+                                    </tr>
+                                    <tr class="singular-row">
+                                        <td><b>TI</b></td>
+                                        <td>-š</td>
+                                        <td>radiš</td>
+                                        <td>voliš</td>
+                                    </tr>
+                                    <tr class="singular-row">
+                                        <td><b>ON/ONA/ONO</b></td>
+                                        <td>---</td>
+                                        <td>radi</td>
+                                        <td>voli</td>
+                                    </tr>
+                                    <tr class="plural-row plural-row-start">
+                                        <td><b>MI</b></td>
+                                        <td>-mo</td>
+                                        <td>radimo</td>
+                                        <td>volimo</td>
+                                    </tr>
+                                    <tr class="plural-row">
+                                        <td><b>VI</b></td>
+                                        <td>-te</td>
+                                        <td>radite</td>
+                                        <td>volite</td>
+                                    </tr>
+                                    <tr class="plural-row">
+                                        <td><b>ONI/ONE/ONA</b></td>
+                                        <td class="ending">-e</td>
+                                        <td>rade</td>
+                                        <td>vole</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="pronouns" class="content-section">
+                    <div class="grammar-card">
+                        <h2>Prisvojne Zamenice</h2>
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Person</th>
+                                        <th class="col-singular">Masc. Sg</th>
+                                        <th class="col-singular">Fem. Sg</th>
+                                        <th class="col-singular">Neut. Sg</th>
+                                        <th class="col-plural">Masc. Pl</th>
+                                        <th class="col-plural">Fem. Pl</th>
+                                        <th class="col-plural">Neut. Pl</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="pronoun-table">
+                                    <tr>
+                                        <td><b>JA</b></td>
+                                        <td class="col-singular">moj</td>
+                                        <td class="col-singular">moja</td>
+                                        <td class="col-singular">moje</td>
+                                        <td class="col-plural">moji</td>
+                                        <td class="col-plural">moje</td>
+                                        <td class="col-plural">moja</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>TI</b></td>
+                                        <td class="col-singular">tvoj</td>
+                                        <td class="col-singular">tvoja</td>
+                                        <td class="col-singular">tvoje</td>
+                                        <td class="col-plural">tvoji</td>
+                                        <td class="col-plural">tvoje</td>
+                                        <td class="col-plural">tvoja</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>ON</b></td>
+                                        <td class="col-singular">njegov</td>
+                                        <td class="col-singular">njegova</td>
+                                        <td class="col-singular">njegovo</td>
+                                        <td class="col-plural">njegovi</td>
+                                        <td class="col-plural">njegove</td>
+                                        <td class="col-plural">njegova</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>ONA</b></td>
+                                        <td class="col-singular">njen</td>
+                                        <td class="col-singular">njena</td>
+                                        <td class="col-singular">njeno</td>
+                                        <td class="col-plural">njeni</td>
+                                        <td class="col-plural">njene</td>
+                                        <td class="col-plural">njena</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>MI</b></td>
+                                        <td class="col-singular">naš</td>
+                                        <td class="col-singular">naša</td>
+                                        <td class="col-singular">naše</td>
+                                        <td class="col-plural">naši</td>
+                                        <td class="col-plural">naše</td>
+                                        <td class="col-plural">naša</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>VI</b></td>
+                                        <td class="col-singular">vaš</td>
+                                        <td class="col-singular">vaša</td>
+                                        <td class="col-singular">vaše</td>
+                                        <td class="col-plural">vaši</td>
+                                        <td class="col-plural">vaše</td>
+                                        <td class="col-plural">vaša</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>ONI</b></td>
+                                        <td class="col-singular">njihov</td>
+                                        <td class="col-singular">njihova</td>
+                                        <td class="col-singular">njihovo</td>
+                                        <td class="col-plural">njihovi</td>
+                                        <td class="col-plural">njihove</td>
+                                        <td class="col-plural">njihova</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- CATEGORY: HOMEWORK -->
+            <div id="homework-cat" class="category-section">
+                <section id="homework" class="content-section active">
+                    <div class="grammar-card">
+                        <h2>Domaći Zadatak (Exercise)</h2>
+                        <div class="homework-container">
+                            <div class="exercise-group">
+                                <h3>1 – Popuni rečenice odgovarajućom zamenicom (moj, moja, moje)</h3>
+                                <div class="sentence">Ovo je <input type="text" class="hw-input"
+                                        oninput="triggerVibeChange()"> brat.</div>
+                                <div class="sentence">Gde je <input type="text" class="hw-input"
+                                        oninput="triggerVibeChange()"> knjiga?</div>
+                                <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                    dete ide u školu.</div>
+                                <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                    pas
+                                    je mali.</div>
+                                <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                    učiteljica je dobra.</div>
+                            </div>
+                            <div class="exercise-group">
+                                <h3>2 – Izaberi tačan oblik</h3>
+                                <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                    telefon</div>
+                                <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                    kuća</div>
+                                <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                    selo</div>
+                                <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                    sestra</div>
+                                <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                    auto</div>
+                            </div>
+
+                            <!-- Exercise 3 -->
+                            <div class="exercise-group">
+                                <h3>3 – Dopuni rečenice odgovarajućim oblikom (tvoj / tvoja / tvoje)</h3>
+                                <div class="sentence">Gde je <input type="text" class="hw-input"
+                                        oninput="triggerVibeChange()"> sveska?</div>
+                                <div class="sentence">Ovo je <input type="text" class="hw-input"
+                                        oninput="triggerVibeChange()"> drug iz odeljenja.</div>
+                                <div class="sentence">Da li je ovo <input type="text" class="hw-input"
+                                        oninput="triggerVibeChange()"> ranac?</div>
+                                <div class="sentence"><input type="text" class="hw-input" oninput="triggerVibeChange()">
+                                    kuća je veoma lepa.</div>
+                                <div class="sentence">Sviđa mi se <input type="text" class="hw-input"
+                                        oninput="triggerVibeChange()"> crtež.</div>
+                            </div>
+
+                            <!-- Exercise 4 -->
+                            <div class="exercise-group">
+                                <h3>4 – Zaokruži tačan oblik</h3>
+                                <div class="sentence"><span class="choices">(tvoj / tvoja / tvoje)</span> <input
+                                        type="text" class="hw-input" oninput="triggerVibeChange()"> olovka je na stolu.
+                                </div>
+                                <div class="sentence">Ovo je <span class="choices">(tvoj / tvoja / tvoje)</span> <input
+                                        type="text" class="hw-input" oninput="triggerVibeChange()"> bicikl.</div>
+                                <div class="sentence">Gde su <span class="choices">(tvoj / tvoja / tvoje)</span> <input
+                                        type="text" class="hw-input" oninput="triggerVibeChange()"> patike?</div>
+                                <div class="sentence"><span class="choices">(tvoj / tvoja / tvoje)</span> <input
+                                        type="text" class="hw-input" oninput="triggerVibeChange()"> sestra ide u peti
+                                    razred.</div>
+                            </div>
+
+                            <!-- Exercise 5 -->
+                            <div class="exercise-group">
+                                <h3>5 – Prepiši rečenice i zameni podvučene reči pravilnim oblikom</h3>
+                                <div class="sentence"><span class="choices">Ovo je ranac koji pripada tebi.</span></div>
+                                <div class="sentence"><input type="text" class="hw-input" style="width: 100%;"
+                                        oninput="triggerVibeChange()"></div>
+                                <div class="sentence" style="margin-top: 1rem;"><span class="choices">Video sam knjigu
+                                        koja
+                                        pripada tebi.</span></div>
+                                <div class="sentence"><input type="text" class="hw-input" style="width: 100%;"
+                                        oninput="triggerVibeChange()"></div>
+                                <div class="sentence" style="margin-top: 1rem;"><span class="choices">Gde je kuća koja
+                                        pripada tebi?</span></div>
+                                <div class="sentence"><input type="text" class="hw-input" style="width: 100%;"
+                                        oninput="triggerVibeChange()"></div>
+                            </div>
+
+                            <!-- Exercise 6 -->
+                            <div class="exercise-group">
+                                <h3>6 – Sastavi rečenicu sa svakim oblikom</h3>
+                                <div class="sentence">tvoj &rarr; <input type="text" class="hw-input"
+                                        style="width: 100%;" oninput="triggerVibeChange()"></div>
+                                <div class="sentence">tvoja &rarr; <input type="text" class="hw-input"
+                                        style="width: 100%;" oninput="triggerVibeChange()"></div>
+                                <div class="sentence">tvoje &rarr; <input type="text" class="hw-input"
+                                        style="width: 100%;" oninput="triggerVibeChange()"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </main>
     </div>
 

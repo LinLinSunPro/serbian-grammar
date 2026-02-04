@@ -1,13 +1,21 @@
-function switchTab(tabId) {
-    // UI logic for switching tabs
-    document.querySelectorAll('.content-section').forEach(section => {
-        section.classList.remove('active');
-    });
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('active');
+function switchCategory(catId) {
+    // Hide all category sections
+    document.querySelectorAll('.category-section').forEach(cat => {
+        cat.classList.remove('active');
     });
 
-    document.getElementById(tabId).classList.add('active');
+    // Remove active class from tab items
+    document.querySelectorAll('.tab-item').forEach(item => {
+        item.classList.remove('active');
+    });
+
+    // Show selected category
+    const selectedCat = document.getElementById(catId + '-cat');
+    if (selectedCat) {
+        selectedCat.classList.add('active');
+    }
+
+    // Add active class to clicked tab
     event.currentTarget.classList.add('active');
 
     // Trigger Vibe Change
