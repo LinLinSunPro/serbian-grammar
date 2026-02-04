@@ -31,10 +31,15 @@ const vibePhrases = [
 ];
 
 let currentVibeIndex = 0;
+let isVibeTransitioning = false; // Zen Cooldown Flag
 
 function triggerVibeChange() {
+    if (isVibeTransitioning) return; // Ignore if already moving (Polako logic)
+
     const vibeText = document.getElementById('vibe-text');
     if (!vibeText) return;
+
+    isVibeTransitioning = true;
 
     // Smooth fade out
     vibeText.style.opacity = '0';
@@ -46,6 +51,11 @@ function triggerVibeChange() {
 
         // Smooth fade in
         vibeText.style.opacity = '1';
+
+        // Reset cooldown after the fade-in animation completes
+        setTimeout(() => {
+            isVibeTransitioning = false;
+        }, 1100);
     }, 1500); // 1.5s delay for that luxury Zen feel
 }
 
