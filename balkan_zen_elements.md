@@ -31,5 +31,5 @@ The socially acceptable reason to procrastinate.
 
 ### Rakija: Samo Malo
 
-Just a little.
+Rakia: just a little.
 The fine line between the 'samo jednu' (just one) and overwhelming Balkan hospitality.

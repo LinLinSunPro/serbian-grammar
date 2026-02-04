@@ -157,7 +157,7 @@ const zenInfo = {
     'POLAKO': "Attitude: Slowly / Take it easy. \nA fundamental Balkan law that says everything can wait. If you are slow enough—most problems will eventually solve themselves.",
     'NEMA': "Draft: None / No draft. \nThe legendary Balkan supernatural force believed to cause everything from back pain to sudden death. \"Promaja: NEMA\" means here you are safe and cozy.",
     'ČEKA SE': "Waiting for coffee / Coffee is brewing. \nA \"loading state\" of the Balkan soul. A daily ritual where all tasks are paused until the coffee is served. The socially acceptable reason to procrastinate.",
-    'SAMO MALO': "Just a little. \nThe fine line between the 'samo jednu' (just one) and overwhelming Balkan hospitality."
+    'SAMO MALO': "Rakia: just a little. \nThe fine line between the 'samo jednu' (just one) and overwhelming Balkan hospitality."
 };
 
 function setupZenInteractivity() {
