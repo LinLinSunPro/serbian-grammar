@@ -449,6 +449,35 @@ tr:hover td {
     box-shadow: 0 4px 15px -5px rgba(0, 210, 255, 0.3);
 }
 
+/* Footer - Zen Signature */
+.zen-footer {
+    margin-top: 15rem;
+    padding: 6rem 0 10rem 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+.zen-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 45%;
+    right: 45%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--text-dim), transparent);
+    opacity: 0.15;
+}
+
+.footer-content {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    letter-spacing: 0.45rem;
+    text-transform: lowercase;
+    opacity: 0.4;
+    font-weight: 500;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {
