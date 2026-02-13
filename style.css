@@ -231,6 +231,8 @@ header.meta-header {
     position: relative;
     text-transform: lowercase;
     letter-spacing: 0.05rem;
+    text-decoration: none;
+    /* Removed the underlines */
 }
 
 .tab-item:hover {
@@ -264,15 +266,18 @@ header.meta-header {
 
 /* Category Specific Glow Colors - Restored to 3-tab logic */
 .tab-item:nth-child(1) {
-    --glow-color: rgba(0, 210, 255, 0.45); /* Gramatika - Cyan */
+    --glow-color: rgba(0, 210, 255, 0.45);
+    /* Gramatika - Cyan */
 }
 
 .tab-item:nth-child(2) {
-    --glow-color: rgba(157, 80, 187, 0.45); /* Vokabular - Purple */
+    --glow-color: rgba(157, 80, 187, 0.45);
+    /* Vokabular - Purple */
 }
 
 .tab-item:nth-child(3) {
-    --glow-color: rgba(255, 154, 158, 0.45); /* Domaći - Pink/Red */
+    --glow-color: rgba(255, 154, 158, 0.45);
+    /* Domaći - Pink/Red */
 }
 
 /* Sub-Tabs for Grammar sections */
