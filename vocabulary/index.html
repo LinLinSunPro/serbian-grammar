@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vokabular | moj srpski</title>
+    <link rel="stylesheet" href="../style.css?v=5.4">
+    <link rel="stylesheet" href="../vocab-grid.css?v=1.4">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="meta-header">
+            <div class="header-left">
+                <a href="../" style="text-decoration: none;">
+                    <h1>moj srpski</h1>
+                </a>
+            </div>
+            <div class="header-right">
+                <div class="zen-icons-row">
+                    <div class="zen-icons">
+                        <!-- Icons preserved -->
+                        <svg class="icon fildzan" id="icon-fildzan" viewBox="0 0 50 50">
+                            <path d="M10 20 C10 35 15 40 25 40 C35 40 40 35 40 20 H10 Z" stroke="var(--primary-accent)"
+                                stroke-width="2" fill="none" />
+                        </svg>
+                        <div class="vibe-status" id="vibe-text">STAV: <b>POLAKO</b></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="tabs-container">
+            <a href="../grammar/" class="tab-item">Gramatika</a>
+            <a href="./" class="tab-item active">Vokabular</a>
+            <a href="../homework/" class="tab-item">Domaći zadatak</a>
+        </nav>
+
+        <main>
+            <div class="category-section active">
+                <div class="vocab-grid-compact">
+                    <div class="vocab-compact-card" onclick="selectVocabTopic('family', this)">
+                        <div class="card-text">
+                            <h3>Porodica</h3>
+                            <div class="subtitle">Family</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="vocab-active-display" class="vocab-display-area">
+                    <div class="placeholder-text">Izaberi temu</div>
+                </div>
+            </div>
+            <footer class="zen-footer">
+                <div class="footer-content">moj srpski | 2026</div>
+            </footer>
+        </main>
+    </div>
+    <script src="../app.js?v=4.0"></script>
+</body>
+
+</html>

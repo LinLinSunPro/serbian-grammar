@@ -1,13 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="sr">
 
 <head>
-    <meta http-equiv="refresh" content="0; url=myserbian/grammar/" />
-    <title>moj srpski | Redirecting...</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gramatika | moj srpski</title>
+    <link rel="stylesheet" href="style.css?v=5.4">
+    <link rel="stylesheet" href="vocab-grid.css?v=1.4">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
 <body>
-    <p>Redirecting to <a href="myserbian/grammar/">moj srpski</a>...</p>
+    <div class="container">
+        <header class="meta-header">
+            <div class="header-left">
+                <h1>moj srpski</h1>
+            </div>
+            <div class="header-right">
+                <div class="zen-icons-row">
+                    <div class="zen-icons">
+                        <svg class="icon fildzan" id="icon-fildzan" viewBox="0 0 50 50">
+                            <path d="M10 20 C10 35 15 40 25 40 C35 40 40 35 40 20 H10 Z" stroke="var(--primary-accent)"
+                                stroke-width="2" fill="none" />
+                            <path d="M20 15 Q25 10 20 5" class="smoke-line" />
+                            <path d="M25 13 Q30 8 25 3" class="smoke-line smoke-2" />
+                            <path d="M30 15 Q35 10 30 5" class="smoke-line smoke-3" />
+                        </svg>
+                        <svg class="icon cokanjcic" id="icon-cokanjcic" viewBox="0 0 40 60">
+                            <path d="M15 10 L15 25 Q10 25 10 40 L10 50 L30 50 L30 40 Q30 25 25 25 L25 10 Z"
+                                stroke="var(--secondary-accent)" stroke-width="2" fill="none" />
+                            <rect x="14" y="6" width="12" height="4" rx="1" stroke="var(--secondary-accent)"
+                                stroke-width="2" fill="none" />
+                        </svg>
+                        <div class="vibe-status" id="vibe-text">STAV: <b>POLAKO</b></div>
+                    </div>
+                    <div id="info-reveal" class="info-reveal-box"></div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="tabs-container">
+            <a href="grammar/" class="tab-item active">Gramatika</a>
+            <a href="vocabulary/" class="tab-item">Vokabular</a>
+            <a href="homework/" class="tab-item">Domaći zadatak</a>
+        </nav>
+
+        <main>
+            <div id="grammar-cat" class="category-section active">
+                <div class="sub-tabs-container">
+                    <div class="sub-tab-item active" onclick="switchSubCategory('biti', event)">glagol biti</div>
+                    <div class="sub-tab-item" onclick="switchSubCategory('verbs', event)">prezent glagola</div>
+                    <div class="sub-tab-item" onclick="switchSubCategory('pronouns', event)">prisvojne zamenice</div>
+                </div>
+
+                <section id="biti" class="content-section active">
+                    <div class="grammar-card">
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Person</th>
+                                        <th>Positive Form</th>
+                                        <th>Negative Form</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="singular-row">
+                                        <td><b>JA</b></td>
+                                        <td>sam</td>
+                                        <td class="ending">nisam</td>
+                                    </tr>
+                                    <tr class="singular-row">
+                                        <td><b>TI</b></td>
+                                        <td>si</td>
+                                        <td class="ending">nisi</td>
+                                    </tr>
+                                    <tr class="singular-row">
+                                        <td><b>ON/ONA/ONO</b></td>
+                                        <td>je</td>
+                                        <td class="ending">nije</td>
+                                    </tr>
+                                    <tr class="plural-row plural-row-start">
+                                        <td><b>MI</b></td>
+                                        <td>smo</td>
+                                        <td class="ending">nismo</td>
+                                    </tr>
+                                    <tr class="plural-row">
+                                        <td><b>VI</b></td>
+                                        <td>ste</td>
+                                        <td class="ending">niste</td>
+                                    </tr>
+                                    <tr class="plural-row">
+                                        <td><b>ONI/ONE/ONA</b></td>
+                                        <td>su</td>
+                                        <td class="ending">nisu</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <footer class="zen-footer">
+                <div class="footer-content">moj srpski | 2026</div>
+            </footer>
+        </main>
+    </div>
+    <script src="app.js?v=4.0"></script>
 </body>
 
 </html>
