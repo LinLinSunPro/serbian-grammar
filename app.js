@@ -180,7 +180,43 @@ function selectVocabTopic(topicId, cardElement) {
         setTimeout(() => {
             displayArea.innerHTML = sourceContent.innerHTML;
             displayArea.style.opacity = '1';
+
+            // If we just loaded "texts", ensure the first story is active
+            if (topicId === 'texts') {
+                const firstTab = displayArea.querySelector('.text-tab');
+                if (firstTab) firstTab.classList.add('active');
+            }
         }, 200);
+    }
+}
+
+function switchInnerStory(storyId, event) {
+    const textsContainer = document.getElementById('vocab-active-display');
+    if (!textsContainer) return;
+
+    // Hide all stories
+    textsContainer.querySelectorAll('.inner-story').forEach(story => {
+        story.style.display = 'none';
+        story.classList.remove('active');
+    });
+
+    // Deactivate all tabs
+    textsContainer.querySelectorAll('.text-tab').forEach(tab => {
+        tab.classList.remove('active');
+        tab.style.opacity = '0.6';
+    });
+
+    // Show selected story
+    const selected = textsContainer.querySelector('#' + storyId);
+    if (selected) {
+        selected.style.display = 'block';
+        setTimeout(() => selected.classList.add('active'), 10);
+    }
+
+    // Set active tab
+    if (event && event.currentTarget) {
+        event.currentTarget.classList.add('active');
+        event.currentTarget.style.opacity = '1';
     }
 }
 

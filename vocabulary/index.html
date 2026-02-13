@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Vokabular | moj srpski</title>
         <link rel="stylesheet" href="../style.css?v=5.5">
-        <link rel="stylesheet" href="../vocab-grid.css?v=1.5">
+        <link rel="stylesheet" href="../vocab-grid.css?v=1.6">
         <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
@@ -39,7 +39,6 @@
                                                 </svg>
                                                 <div class="vibe-status" id="vibe-text">STAV: <b>POLAKO</b></div>
                                         </div>
-                                        <!-- Restoration of missing graphic info box -->
                                         <div id="info-reveal" class="info-reveal-box"></div>
                                 </div>
                         </div>
@@ -298,59 +297,195 @@
                                         </div>
 
                                         <div id="vocab-content-texts">
-                                                <div class="story-layout">
-                                                        <div class="story-text-col">
-                                                                <h3
-                                                                        style="margin-bottom: 1.5rem; color: var(--primary-accent); font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.1rem;">
-                                                                        Priča 2: Ernst i Lena</h3>
-                                                                "Živim u Srbiji već dugo. Ja sam Austrijanac i srpski
-                                                                zet. Zovem se Ernst.
-                                                                Moja žena je Srpkinja. Ona se zove Lena. Njena porodica
-                                                                ne živi u Srbiji. Njeni mama, tata, brat i sestra žive u
-                                                                Bosni.
-                                                                Moja sestra i njena porodica žive u Austriji. Njen sin
-                                                                se zove Ernst, kao i ja. Moj zet se zove Klaus, i on
-                                                                ponekad radi u Srbiji.
-                                                                Lena i ja radimo zajedno. Naš posao je težak i radimo
-                                                                mnogo. Veoma retko smo slobodni. U Srbiji mi se sviđa
-                                                                hrana, sviđa mi se muzika i sviđaju mi se ljudi. Volim
-                                                                život u Srbiji."
+                                                <div class="texts-sub-nav"
+                                                        style="display: flex; gap: 1.5rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1rem;">
+                                                        <div class="text-tab active"
+                                                                onclick="switchInnerStory('story-julija', event)"
+                                                                style="cursor: pointer; opacity: 0.6; font-size: 0.9rem; text-transform: lowercase;">
+                                                                Priča 1: Julija</div>
+                                                        <div class="text-tab"
+                                                                onclick="switchInnerStory('story-ernst', event)"
+                                                                style="cursor: pointer; opacity: 0.6; font-size: 0.9rem; text-transform: lowercase;">
+                                                                Priča 2: Ernst</div>
+                                                        <div class="text-tab"
+                                                                onclick="switchInnerStory('story-rosa', event)"
+                                                                style="cursor: pointer; opacity: 0.6; font-size: 0.9rem; text-transform: lowercase;">
+                                                                Rosa i Dario</div>
+                                                        <div class="text-tab"
+                                                                onclick="switchInnerStory('story-metju', event)"
+                                                                style="cursor: pointer; opacity: 0.6; font-size: 0.9rem; text-transform: lowercase;">
+                                                                Metju</div>
+                                                </div>
+
+                                                <!-- STORY: JULIJA -->
+                                                <div id="story-julija" class="inner-story active">
+                                                        <div class="story-layout">
+                                                                <div class="story-text-col">
+                                                                        <h3
+                                                                                style="margin-bottom: 1rem; color: var(--primary-accent); font-size: 1.1rem;">
+                                                                                Priča 1: Julija</h3>
+                                                                        "Ja se zovem Julija. Ja sam Ruskinja. Moj muž,
+                                                                        moja deca i ja živimo u Srbiji. Ja sam
+                                                                        profesorica, a moj muž je lekar. On radi mnogo,
+                                                                        kao i ja. Mi smo veoma zauzeti. Kada je vikend,
+                                                                        slobodni smo. Sviđa mi se kada je naša porodica
+                                                                        zajedno. Njegovi roditelji su naši gosti
+                                                                        ponekad. Moji roditelji žive daleko, u Rusiji.
+                                                                        Ali, to nije problem danas. Moja mama i moj tata
+                                                                        koriste internet, vidimo se svaki dan, i živimo
+                                                                        kao jedna velika porodica."
+                                                                </div>
+                                                                <div class="story-vocab-col">
+                                                                        <div class="word-list">
+                                                                                <div class="word-item"><span
+                                                                                                class="word-serbian">Ruskinja</span><span
+                                                                                                class="word-english">Russian
+                                                                                                (f)</span></div>
+                                                                                <div class="word-item"><span
+                                                                                                class="word-serbian">Lekar</span><span
+                                                                                                class="word-english">Doctor
+                                                                                                (m)</span></div>
+                                                                                <div class="word-item"><span
+                                                                                                class="word-serbian">Zauzeti</span><span
+                                                                                                class="word-english">Busy
+                                                                                                (pl)</span></div>
+                                                                                <div class="word-item"><span
+                                                                                                class="word-serbian">Vidi
+                                                                                                se svaki dan</span><span
+                                                                                                class="word-english">See
+                                                                                                each other daily</span>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
                                                         </div>
-                                                        <div class="story-vocab-col">
-                                                                <div class="word-list">
-                                                                        <div class="word-item"><span
-                                                                                        class="word-serbian">Srpski
-                                                                                        zet</span><span
-                                                                                        class="word-english">Serbian
-                                                                                        son-in-law</span></div>
-                                                                        <div class="word-item"><span
-                                                                                        class="word-serbian">Naš
-                                                                                        posao</span><span
-                                                                                        class="word-english">Our
-                                                                                        job</span></div>
-                                                                        <div class="word-item"><span
-                                                                                        class="word-serbian">Retko
-                                                                                        slobodni</span><span
-                                                                                        class="word-english">Rarely
-                                                                                        free</span></div>
-                                                                        <div class="word-item"><span
-                                                                                        class="word-serbian">Sviđa mi
-                                                                                        se...</span><span
-                                                                                        class="word-english">I
-                                                                                        like...</span></div>
+                                                </div>
+
+                                                <!-- STORY: ERNST -->
+                                                <div id="story-ernst" class="inner-story" style="display: none;">
+                                                        <div class="story-layout">
+                                                                <div class="story-text-col">
+                                                                        <h3
+                                                                                style="margin-bottom: 1rem; color: var(--primary-accent); font-size: 1.1rem;">
+                                                                                Priča 2: Ernst i Lena</h3>
+                                                                        "Živim u Srbiji već dugo. Ja sam Austrijanac i
+                                                                        srpski zet. Zovem se Ernst. Moja žena je
+                                                                        Srpkinja. Ona se zove Lena. Njena porodica ne
+                                                                        živi u Srbiji. Njeni mama, tata, brat i sestra
+                                                                        žive u Bosni. Moja sestra i njena porodica žive
+                                                                        u Austriji. Njen sin se zove Ernst, kao i ja.
+                                                                        Moj zet se zove Klaus, i on ponekad radi u
+                                                                        Srbiji. Lena i ja radimo zajedno. Naš posao je
+                                                                        težak i radimo mnogo. Veoma retko smo slobodni."
+                                                                </div>
+                                                                <div class="story-vocab-col">
+                                                                        <div class="word-list">
+                                                                                <div class="word-item"><span
+                                                                                                class="word-serbian">Srpski
+                                                                                                zet</span><span
+                                                                                                class="word-english">Serbian
+                                                                                                son-in-law</span></div>
+                                                                                <div class="word-item"><span
+                                                                                                class="word-serbian">Naš
+                                                                                                posao</span><span
+                                                                                                class="word-english">Our
+                                                                                                job</span></div>
+                                                                                <div class="word-item"><span
+                                                                                                class="word-serbian">Težak</span><span
+                                                                                                class="word-english">Hard
+                                                                                                / Heavy</span></div>
+                                                                                <div class="word-item"><span
+                                                                                                class="word-serbian">Retko
+                                                                                                slobodni</span><span
+                                                                                                class="word-english">Rarely
+                                                                                                free</span></div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+
+                                                <!-- STORY: ROSA -->
+                                                <div id="story-rosa" class="inner-story" style="display: none;">
+                                                        <div class="story-layout">
+                                                                <div class="story-text-col">
+                                                                        <h3
+                                                                                style="margin-bottom: 1rem; color: var(--primary-accent); font-size: 1.1rem;">
+                                                                                Rosa i Dario</h3>
+                                                                        "Zovem se Rosa. Ja sam Italijanka. Moj muž se
+                                                                        zove Dario. On je takođe Italijan. Mi živimo
+                                                                        ovde, u Srbiji. On ne govori srpski dobro, ali
+                                                                        razume. Ja govorim i razumem srpski odlično.
+                                                                        Živimo u Srbiji zato što Dario radi ovde. On je
+                                                                        ekonomista. Ja sam takođe ekonomistkinja, ali ja
+                                                                        trenutno ne radim. Ali, ja nisam samo
+                                                                        ekonomistkinja, ja sam i džez pevačica. Volim
+                                                                        džez. Moj muž i moja muzika su moj život."
+                                                                </div>
+                                                                <div class="story-vocab-col">
+                                                                        <div class="word-list">
+                                                                                <div class="word-item"><span
+                                                                                                class="word-serbian">Takođe</span><span
+                                                                                                class="word-english">Also
+                                                                                                / Too</span></div>
+                                                                                <div class="word-item"><span
+                                                                                                class="word-serbian">Odlično</span><span
+                                                                                                class="word-english">Excellent</span>
+                                                                                </div>
+                                                                                <div class="word-item"><span
+                                                                                                class="word-serbian">Trenutno</span><span
+                                                                                                class="word-english">Currently</span>
+                                                                                </div>
+                                                                                <div class="word-item"><span
+                                                                                                class="word-serbian">Džez
+                                                                                                pevačica</span><span
+                                                                                                class="word-english">Jazz
+                                                                                                singer (f)</span></div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+
+                                                <!-- STORY: METJU -->
+                                                <div id="story-metju" class="inner-story" style="display: none;">
+                                                        <div class="story-layout">
+                                                                <div class="story-text-col">
+                                                                        <h3
+                                                                                style="margin-bottom: 1rem; color: var(--primary-accent); font-size: 1.1rem;">
+                                                                                Student Metju</h3>
+                                                                        "Zovem se Metju. Ja sam student. Studiram ovde,
+                                                                        u Srbiji. Obično učim, zato što nisam slobodan.
+                                                                        Često gledam TV, zato što nisam umoran. Nikad ne
+                                                                        slušam radio. Retko treniram karate. Svaki dan
+                                                                        ručam u restoranu, zato što nisam dobar kuvar."
+                                                                </div>
+                                                                <div class="story-vocab-col">
+                                                                        <div class="word-list">
+                                                                                <div class="word-item"><span
+                                                                                                class="word-serbian">Obično</span><span
+                                                                                                class="word-english">Usually</span>
+                                                                                </div>
+                                                                                <div class="word-item"><span
+                                                                                                class="word-serbian">Često</span><span
+                                                                                                class="word-english">Often</span>
+                                                                                </div>
+                                                                                <div class="word-item"><span
+                                                                                                class="word-serbian">Umoran</span><span
+                                                                                                class="word-english">Tired</span>
+                                                                                </div>
+                                                                                <div class="word-item"><span
+                                                                                                class="word-serbian">Kuvar</span><span
+                                                                                                class="word-english">Cook
+                                                                                                / Chef</span></div>
+                                                                        </div>
                                                                 </div>
                                                         </div>
                                                 </div>
                                         </div>
-
                                 </div>
                         </div>
-        </div>
-        </div>
-        <footer class="zen-footer">
-                <div class="footer-content">moj srpski | 2026</div>
-        </footer>
-        </main>
+                        <footer class="zen-footer">
+                                <div class="footer-content">moj srpski | 2026</div>
+                        </footer>
+                </main>
         </div>
         <script src="../app.js?v=4.0"></script>
 </body>
