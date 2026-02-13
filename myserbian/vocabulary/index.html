@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vokabular | moj srpski</title>
-    <link rel="stylesheet" href="../style.css?v=5.2">
-    <link rel="stylesheet" href="../vocab-grid.css?v=1.2">
+    <link rel="stylesheet" href="../../style.css?v=5.3">
+    <link rel="stylesheet" href="../../vocab-grid.css?v=1.3">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
@@ -14,9 +14,7 @@
     <div class="container">
         <header class="meta-header">
             <div class="header-left">
-                <a href="../" style="text-decoration: none;">
-                    <h1>moj srpski</h1>
-                </a>
+                <h1>moj srpski</h1>
             </div>
             <div class="header-right">
                 <div class="zen-icons-row">
@@ -50,42 +48,24 @@
             <div class="category-section active">
                 <div class="vocab-grid-compact">
                     <div class="vocab-compact-card" onclick="selectVocabTopic('family', this)">
-                        <svg class="vocab-icon-small" viewBox="0 0 50 50">
-                            <circle cx="15" cy="15" r="5" />
-                            <circle cx="35" cy="15" r="5" />
-                            <path
-                                d="M15 20 L15 35 M35 20 L35 35 M15 35 L10 45 M15 35 L20 45 M35 35 L30 45 M35 35 L40 45 M15 25 L35 25"
-                                stroke-linecap="round" />
-                        </svg>
                         <div class="card-text">
                             <h3>Porodica</h3>
                             <div class="subtitle">Family</div>
                         </div>
                     </div>
                     <div class="vocab-compact-card" onclick="selectVocabTopic('health', this)">
-                        <svg class="vocab-icon-small" viewBox="0 0 50 50">
-                            <rect x="10" y="20" width="30" height="10" rx="5" ry="5" />
-                            <line x1="25" y1="20" x2="25" y2="30" />
-                        </svg>
                         <div class="card-text">
                             <h3>Zdravlje</h3>
                             <div class="subtitle">Health</div>
                         </div>
                     </div>
                     <div class="vocab-compact-card" onclick="selectVocabTopic('professions', this)">
-                        <svg class="vocab-icon-small" viewBox="0 0 50 50">
-                            <rect x="20" y="10" width="10" height="20" />
-                            <rect x="23" y="30" width="4" height="15" />
-                        </svg>
                         <div class="card-text">
                             <h3>Posao</h3>
                             <div class="subtitle">Work & Countries</div>
                         </div>
                     </div>
                     <div class="vocab-compact-card" onclick="selectVocabTopic('basics', this)">
-                        <svg class="vocab-icon-small" viewBox="0 0 50 50">
-                            <path d="M10 15 Q10 5 25 5 Q40 5 40 15 Q40 25 25 25 Q20 25 15 30 L15 25 Q10 25 10 15 Z" />
-                        </svg>
                         <div class="card-text">
                             <h3>Osnove</h3>
                             <div class="subtitle">Basics</div>
@@ -104,36 +84,12 @@
                                     class="word-english">Mom / Dad</span></div>
                             <div class="word-item"><span class="word-serbian">Brat / Sestra</span><span
                                     class="word-english">Brother / Sister</span></div>
-                            <div class="word-item"><span class="word-serbian">Sin / Ćerka</span><span
-                                    class="word-english">Son / Daughter</span></div>
-                            <div class="word-item"><span class="word-serbian">Muž / Žena</span><span
-                                    class="word-english">Husband / Wife</span></div>
                         </div>
                     </div>
                     <div id="vocab-content-health">
                         <div class="word-list">
-                            <div class="word-item"><span class="word-serbian">Bolovi u mišićima</span><span
-                                    class="word-english">Muscle aches</span></div>
                             <div class="word-item"><span class="word-serbian">Upala grla</span><span
                                     class="word-english">Sore throat</span></div>
-                            <div class="word-item"><span class="word-serbian">Suvi kašalj</span><span
-                                    class="word-english">Dry cough</span></div>
-                        </div>
-                    </div>
-                    <div id="vocab-content-professions">
-                        <div class="word-list">
-                            <div class="word-item"><span class="word-serbian">Lekar / Profesor</span><span
-                                    class="word-english">Doctor / Professor</span></div>
-                            <div class="word-item"><span class="word-serbian">Kuvar</span><span
-                                    class="word-english">Chef</span></div>
-                        </div>
-                    </div>
-                    <div id="vocab-content-basics">
-                        <div class="word-list">
-                            <div class="word-item"><span class="word-serbian">Dobar dan / Hvala</span><span
-                                    class="word-english">Good day / Thank you</span></div>
-                            <div class="word-item"><span class="word-serbian">Kako si?</span><span
-                                    class="word-english">How are you?</span></div>
                         </div>
                     </div>
                 </div>
@@ -143,7 +99,7 @@
             </footer>
         </main>
     </div>
-    <script src="../app.js?v=3.9"></script>
+    <script src="../../app.js?v=3.9"></script>
 </body>
 
 </html>
