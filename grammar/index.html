@@ -53,6 +53,9 @@
                     <div class="sub-tab-item active" onclick="switchSubCategory('biti', event)">glagol biti</div>
                     <div class="sub-tab-item" onclick="switchSubCategory('verbs', event)">prezent glagola</div>
                     <div class="sub-tab-item" onclick="switchSubCategory('pronouns', event)">prisvojne zamenice</div>
+                    <div class="sub-tab-item" onclick="switchSubCategory('gender', event)">rod imenica</div>
+                    <div class="sub-tab-item" onclick="switchSubCategory('plural', event)">množina</div>
+                    <div class="sub-tab-item" onclick="switchSubCategory('order', event)">red reči</div>
                 </div>
 
                 <section id="biti" class="content-section active">
@@ -241,7 +244,124 @@
                             </table>
                         </div>
                     </div>
-                </section>
+                    <section id="gender" class="content-section">
+                        <div class="grammar-card">
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Muški rod (M)</th>
+                                            <th>Ženski rod (Ž)</th>
+                                            <th>Srednji rod (S)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Ovo je moj...</td>
+                                            <td>Ovo je moja...</td>
+                                            <td>Ovo je moje...</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ends in: <b>Consonant</b></td>
+                                            <td>Ends in: <b>-a</b></td>
+                                            <td>Ends in: <b>-o / -e</b></td>
+                                        </tr>
+                                        <tr class="singular-row">
+                                            <td>prodavac, pasoš, jezik</td>
+                                            <td>studentkinja, torba, zemlja</td>
+                                            <td>ime, veče, pivo</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="plural" class="content-section">
+                        <div class="grammar-card">
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Muški rod (Sg -> Pl)</th>
+                                            <th>Ženski rod (Sg -> Pl)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Consonant -> <b>-i</b></td>
+                                            <td>-a -> <b>-e</b></td>
+                                        </tr>
+                                        <tr class="singular-row">
+                                            <td>novinar -> <b>novinari</b></td>
+                                            <td>novinarka -> <b>novinarke</b></td>
+                                        </tr>
+                                        <tr class="singular-row">
+                                            <td>lekar -> <b>lekari</b></td>
+                                            <td>lekarka -> <b>lekarke</b></td>
+                                        </tr>
+                                        <tr class="singular-row">
+                                            <td>policajac -> <b>policajci</b></td>
+                                            <td>policajka -> <b>policajke</b></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="order" class="content-section">
+                        <div class="grammar-card">
+                            <div class="table-wrapper">
+                                <style>
+                                    .order-list {
+                                        padding: 1.5rem;
+                                        color: var(--text-main);
+                                        line-height: 1.8;
+                                    }
+
+                                    .order-item {
+                                        margin-bottom: 1.2rem;
+                                        padding-bottom: 0.8rem;
+                                        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                                        display: flex;
+                                        flex-direction: column;
+                                    }
+
+                                    .order-bad {
+                                        color: #ff5555;
+                                        text-decoration: line-through;
+                                        font-size: 0.9rem;
+                                        opacity: 0.7;
+                                    }
+
+                                    .order-good {
+                                        color: var(--primary-accent);
+                                        font-weight: 500;
+                                        font-size: 1.05rem;
+                                    }
+                                </style>
+                                <div class="order-list">
+                                    <div class="order-item">
+                                        <span class="order-bad">Drago je mi.</span>
+                                        <span class="order-good">Drago mi je.</span>
+                                    </div>
+                                    <div class="order-item">
+                                        <span class="order-bad">Zovem ja se Rosa.</span>
+                                        <span class="order-good">Ja se zovem Rosa.</span>
+                                    </div>
+                                    <div class="order-item">
+                                        <span class="order-bad">Da li vi ste Kinez?</span>
+                                        <span class="order-good">Da li ste vi Kinez?</span>
+                                    </div>
+                                    <div class="order-item">
+                                        <span class="order-bad">Sam Nemac.</span>
+                                        <span class="order-good">Ja sam Nemac. / Nemac sam.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
             </div>
             <footer class="zen-footer">
                 <div class="footer-content">moj srpski | 2026</div>
