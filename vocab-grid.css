@@ -119,3 +119,36 @@
     color: var(--text-dim);
     font-weight: 300;
 }
+
+/* STORY LAYOUT (Split View) */
+.story-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 1rem;
+}
+
+.story-text-col {
+    color: var(--text-main);
+    font-size: 1.15rem;
+    line-height: 1.9;
+    letter-spacing: 0.01rem;
+    padding-right: 1rem;
+}
+
+.story-vocab-col .word-list {
+    grid-template-columns: 1fr !important;
+    /* Force single column in the split */
+}
+
+@media (max-width: 1024px) {
+    .story-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .story-text-col {
+        padding-right: 0;
+    }
+}
