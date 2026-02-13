@@ -228,6 +228,16 @@ document.addEventListener('DOMContentLoaded', () => {
     loadHomework();
     setupZenInteractivity();
 
+    // FIX: Allow clicking the header background to change vibe
+    const header = document.querySelector('.meta-header');
+    if (header) {
+        header.addEventListener('click', (e) => {
+            // Don't change vibe if clicking specific interactive icons/text
+            if (e.target.closest('.icon') || e.target.closest('#vibe-text') || e.target.closest('.info-reveal-box')) return;
+            triggerVibeChange();
+        });
+    }
+
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.zen-icons-row') && !e.target.closest('.vocab-card') && !e.target.closest('.dash-card')) {
             triggerVibeChange();
