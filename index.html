@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gramatika | moj srpski</title>
-    <link rel="stylesheet" href="style.css?v=5.4">
-    <link rel="stylesheet" href="vocab-grid.css?v=1.4">
+    <link rel="stylesheet" href="style.css?v=5.5">
+    <link rel="stylesheet" href="vocab-grid.css?v=1.5">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
@@ -100,7 +100,146 @@
                         </div>
                     </div>
                 </section>
-                <!-- Rest of content will be loaded as the user navigates, but the primary grammar view is here -->
+
+                <section id="verbs" class="content-section">
+                    <div class="grammar-card">
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Person</th>
+                                        <th>Ending</th>
+                                        <th>Example: Raditi</th>
+                                        <th>Example: Voleti</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="singular-row">
+                                        <td><b>JA</b></td>
+                                        <td>-m</td>
+                                        <td>radim</td>
+                                        <td>volim</td>
+                                    </tr>
+                                    <tr class="singular-row">
+                                        <td><b>TI</b></td>
+                                        <td>-š</td>
+                                        <td>radiš</td>
+                                        <td>voliš</td>
+                                    </tr>
+                                    <tr class="singular-row">
+                                        <td><b>ON/ONA/ONO</b></td>
+                                        <td>---</td>
+                                        <td>radi</td>
+                                        <td>voli</td>
+                                    </tr>
+                                    <tr class="plural-row plural-row-start">
+                                        <td><b>MI</b></td>
+                                        <td>-mo</td>
+                                        <td>radimo</td>
+                                        <td>volimo</td>
+                                    </tr>
+                                    <tr class="plural-row">
+                                        <td><b>VI</b></td>
+                                        <td>-te</td>
+                                        <td>radite</td>
+                                        <td>volite</td>
+                                    </tr>
+                                    <tr class="plural-row">
+                                        <td><b>ONI/ONE/ONA</b></td>
+                                        <td class="ending">-e</td>
+                                        <td>rade</td>
+                                        <td>vole</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="pronouns" class="content-section">
+                    <div class="grammar-card">
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Person</th>
+                                        <th class="col-singular">Masc. Sg</th>
+                                        <th class="col-singular">Fem. Sg</th>
+                                        <th class="col-singular">Neut. Sg</th>
+                                        <th class="col-plural">Masc. Pl</th>
+                                        <th class="col-plural">Fem. Pl</th>
+                                        <th class="col-plural">Neut. Pl</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>JA</b></td>
+                                        <td class="col-singular">moj</td>
+                                        <td class="col-singular">moja</td>
+                                        <td class="col-singular">moje</td>
+                                        <td class="col-plural">moji</td>
+                                        <td class="col-plural">moje</td>
+                                        <td class="col-plural">moja</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>TI</b></td>
+                                        <td class="col-singular">tvoj</td>
+                                        <td class="col-singular">tvoja</td>
+                                        <td class="col-singular">tvoje</td>
+                                        <td class="col-plural">tvoji</td>
+                                        <td class="col-plural">tvoje</td>
+                                        <td class="col-plural">tvoja</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>ON</b></td>
+                                        <td class="col-singular">njegov</td>
+                                        <td class="col-singular">njegova</td>
+                                        <td class="col-singular">njegovo</td>
+                                        <td class="col-plural">njegovi</td>
+                                        <td class="col-plural">njegove</td>
+                                        <td class="col-plural">njegova</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>ONA</b></td>
+                                        <td class="col-singular">njen</td>
+                                        <td class="col-singular">njena</td>
+                                        <td class="col-singular">njeno</td>
+                                        <td class="col-plural">njeni</td>
+                                        <td class="col-plural">njene</td>
+                                        <td class="col-plural">njena</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>MI</b></td>
+                                        <td class="col-singular">naš</td>
+                                        <td class="col-singular">naša</td>
+                                        <td class="col-singular">naše</td>
+                                        <td class="col-plural">naši</td>
+                                        <td class="col-plural">naše</td>
+                                        <td class="col-plural">naša</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>VI</b></td>
+                                        <td class="col-singular">vaš</td>
+                                        <td class="col-singular">vaša</td>
+                                        <td class="col-singular">vaše</td>
+                                        <td class="col-plural">vaši</td>
+                                        <td class="col-plural">vaše</td>
+                                        <td class="col-plural">vaša</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>ONI</b></td>
+                                        <td class="col-singular">njihov</td>
+                                        <td class="col-singular">njihova</td>
+                                        <td class="col-singular">njihovo</td>
+                                        <td class="col-plural">njihovi</td>
+                                        <td class="col-plural">njihove</td>
+                                        <td class="col-plural">njihova</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
             </div>
             <footer class="zen-footer">
                 <div class="footer-content">moj srpski | 2026</div>
