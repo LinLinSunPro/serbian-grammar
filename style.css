@@ -231,8 +231,9 @@ header.meta-header {
     position: relative;
     text-transform: lowercase;
     letter-spacing: 0.05rem;
-    text-decoration: none;
-    /* Removed the underlines */
+    text-decoration: none !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .tab-item:hover {
