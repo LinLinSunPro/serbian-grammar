@@ -265,18 +265,23 @@ header.meta-header {
     opacity: 1;
 }
 
-/* Category Specific Glow Colors - Restored to 3-tab logic */
+/* Category Specific Glow Colors - 4 tab layout */
 .tab-item:nth-child(1) {
+    --glow-color: rgba(0, 255, 180, 0.45);
+    /* Podkasti - Teal/Green */
+}
+
+.tab-item:nth-child(2) {
     --glow-color: rgba(0, 210, 255, 0.45);
     /* Gramatika - Cyan */
 }
 
-.tab-item:nth-child(2) {
+.tab-item:nth-child(3) {
     --glow-color: rgba(157, 80, 187, 0.45);
     /* Vokabular - Purple */
 }
 
-.tab-item:nth-child(3) {
+.tab-item:nth-child(4) {
     --glow-color: rgba(255, 154, 158, 0.45);
     /* Domaći - Pink/Red */
 }
